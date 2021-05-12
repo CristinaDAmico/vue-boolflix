@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search="getData"/>
 
-    <Content :movies="movieList"/>
+    <Content :movies="movieList" :series="tvList"/>
   </div>
 </template>
 
@@ -30,15 +30,25 @@ export default {
       console.log(searchText);
 
       if(searchText !== '') {
-        // chiamata api movie
-        axios.get(this.apiURL + 'movie', {
-          params: {
+
+        const apiParams = {
             api_key: this.apiKey,
             query: searchText,
             language: 'it-IT'
-          }
+          };
+
+        // chiamata api movie
+        axios.get(this.apiURL + 'movie', {
+          params: apiParams,
+            
         }).then(res => {
             this.movieList = res.data.results;
+        });
+        // chiamata api serie tv
+        axios.get(this.apiURL + 'tv', {
+          params: apiParams,
+        }).then(res => {
+            this.tvList = res.data.results;
         })
       }
     }

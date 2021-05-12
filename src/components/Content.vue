@@ -1,6 +1,7 @@
 <template>
   <main>
-    <section class="movies">
+
+    <section v-show="movies.length" class="movies">
       <h2>Movies</h2>
       <div>
           <Card 
@@ -10,6 +11,18 @@
           />
       </div>
     </section>
+
+    <section v-show="series.length" class="movies">
+      <h2>Serie TV</h2>
+      <div>
+          <Card 
+            v-for="serie in series" 
+            :key="serie.id"
+            :details="serie"
+          />
+      </div>
+    </section>
+
   </main>
 </template>
 
@@ -23,6 +36,7 @@ export default {
   },
   props: {
     movies: Array,
+    series: Array,
   }
 }
 </script>
