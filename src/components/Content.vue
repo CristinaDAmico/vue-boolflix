@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="container">
 
     <section v-show="movies.length" class="movies">
       <h2>Movies</h2>
@@ -42,5 +42,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  color: #dc1a28;
+  margin: 2rem 0;
+}
+
+
+
+
 
 </style>

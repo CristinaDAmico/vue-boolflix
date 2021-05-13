@@ -1,5 +1,6 @@
 <template>
   <header class="top-bar">
+    <div class="container">
       <a href="#">
         <img src="../assets/image/logo.png" alt="logo">
       </a>
@@ -7,6 +8,7 @@
         <input type="text" placeholder="Search movie" v-model.trim="searchText">
         <button @click="$emit('search', searchText)">Search</button>
       </div>
+    </div>
   </header>
 </template>
 
@@ -23,14 +25,18 @@ export default {
 
 <style lang="scss" scoped>
 .top-bar {
-  height: 80px;
   background-color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
+  .container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   img {
     width: 150px;
+  }
+  button {
+    margin-left: 10px;
   }
 }
 

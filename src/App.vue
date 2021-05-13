@@ -64,8 +64,13 @@ export default {
 }
 
 body {
-  height: 100vh;
-  background-color:gray;
+  font-family: sans-serif;
+  background-color: #333;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
 }
 
 </style>
